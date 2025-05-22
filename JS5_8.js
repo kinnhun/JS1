@@ -1,22 +1,26 @@
-function mapKey(keys, collections) {
-  return collections.map(obj => {
-    const newObj = {};
-    keys.forEach(key => {
-      newObj[key] = obj[key];
-    });
-    return newObj;
-  });
+function switchOrder(arr, targetId, newOrder) {
+  if (!Array.isArray(arr)) return [];
+
+  const clone = [...arr];
+  const targetIndex = clone.findIndex(item => item.id === targetId);
+  if (targetIndex === -1) return arr;
+
+  const [targetItem] = clone.splice(targetIndex, 1);
+  clone.splice(newOrder, 0, targetItem);
+
+  return clone.map((item, index) => ({ ...item, order: index }));
 }
 
 if (require.main === module) {
-  const keys = ['b', 'a', 'c'];
-  const collections = [
-    { a: 1, b: 1, c: 2, d: 4, e: 5 },
-    { a: 2, b: 1, c: 5, d: 4, e: 5 },
-    { d: 4, e: 5, a: 22, b: 11, c: 51 }
+  const arr = [
+    { id: 10, order: 0 },
+    { id: 12, order: 1 },
+    { id: 9, order: 2 },
+    { id: 11, order: 3 }
   ];
 
-  console.log('✅ Result:', JSON.stringify(mapKey(keys, collections), null, 2));
+  const result = switchOrder(arr, 9, 1);
+  console.log('✅ Result:', JSON.stringify(result, null, 2));
 }
 
-module.exports = mapKey;
+module.exports = switchOrder;
