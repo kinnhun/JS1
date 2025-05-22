@@ -2,33 +2,36 @@ function smallestUnrepresentableNoConsecutive(nums) {
   nums = nums.filter(n => n > 0);
   nums.sort((a, b) => a - b);
 
-  function dfs(index, currentSum, usedSet) {
-    const key = `${index},${currentSum},${[...usedSet].sort().join(',')}`;
+  const possibleSums = new Set();
+  const memo = new Set();
+
+  function dfs(index, currentSum, used) {
+    const key = `${index},${currentSum},${Array.from(used).join(',')}`;
     if (memo.has(key)) return;
     memo.add(key);
 
-    if (currentSum > 0) possibleSums.add(currentSum);
+    if (currentSum > 0) {
+      possibleSums.add(currentSum);
+    }
 
     for (let i = index; i < nums.length; i++) {
       const val = nums[i];
-      if (usedSet.has(val - 1) || usedSet.has(val + 1)) continue;
+      if (used.has(val - 1) || used.has(val + 1)) continue;
 
-      usedSet.add(val);
-      dfs(i + 1, currentSum + val, usedSet);
-      usedSet.delete(val);
+      used.add(val);
+      dfs(i + 1, currentSum + val, used);
+      used.delete(val);
     }
   }
 
-  const possibleSums = new Set();
-  const memo = new Set();
   dfs(0, 0, new Set());
 
-  let result = 1;
-  while (possibleSums.has(result)) {
-    result++;
+  let res = 1;
+  while (possibleSums.has(res)) {
+    res++;
   }
 
-  return result;
+  return res;
 }
 
 if (require.main === module) {
@@ -41,7 +44,7 @@ if (require.main === module) {
   rl.question('Enter a list of integers (space-separated): ', (input) => {
     const nums = input.trim().split(/\s+/).map(Number);
     const result = smallestUnrepresentableNoConsecutive(nums);
-    console.log(`✅ Smallest unrepresentable positive integer (no consecutive subset): ${result}`);
+    console.log(`✅ Smallest positive integer that cannot be represented (no consecutive): ${result}`);
     rl.close();
   });
 }
