@@ -1,4 +1,5 @@
-function findMedian(numbers) {
+function findMedian(numbers) { // số trung vị
+  // Sắp xếp mảng và tìm số ở giữa
   const sorted = numbers.slice().sort((a, b) => a - b);
   const n = sorted.length;
   if (n === 0) return null;

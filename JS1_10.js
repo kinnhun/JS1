@@ -5,9 +5,9 @@ function countStringsWithA(strings) {
 if (require.main === module) {
   const readline = require('readline');
 
-  const rl = readline.createInterface({
+  const rl = readline.createInterface({ // tạo giao diện đọc và ghi dữ liệu
     input: process.stdin,
-    output: process.stdout
+    output: process.stdout  
   });
 
   rl.question('Enter a list of strings (space-separated): ', (input) => {

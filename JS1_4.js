@@ -15,6 +15,7 @@ if (require.main === module) {
       .split(' ')
       .map(Number)
       .filter(n => !isNaN(n));
+      // fomat chuỗi input thành mảng các số
 
     if (numbers.length === 0) {
       console.log('❌ Invalid input. Please enter valid numbers.');

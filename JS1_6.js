@@ -1,11 +1,11 @@
 function sortNumbers(numbers) {
-  return numbers.slice().sort((a, b) => a - b);
+  return numbers.slice().sort((a, b) => a - b);// sắp xếp mảng
 }
 
 if (require.main === module) {
-  const readline = require('readline');
+  const readline = require('readline'); 
 
-  const rl = readline.createInterface({
+  const rl = readline.createInterface({ // tạo giao diện đọc và ghi dữ liệu 
     input: process.stdin,
     output: process.stdout
   });
@@ -20,7 +20,7 @@ if (require.main === module) {
     if (numbers.length === 0) {
       console.log('❌ Please enter valid numbers.');
     } else {
-      const sorted = sortNumbers(numbers);
+      const sorted = sortNumbers(numbers); 
       console.log(`✅ Sorted list: ${sorted.join(' ')}`);
     }
 

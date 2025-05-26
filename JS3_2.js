@@ -1,4 +1,4 @@
-function maxDifference(numbers) {
+function maxDifference(numbers) { // hàm tìm giá trị lớn nhất
   if (numbers.length < 2) return null;
   const min = Math.min(...numbers);
   const max = Math.max(...numbers);

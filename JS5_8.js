@@ -1,8 +1,8 @@
-function switchOrder(arr, targetId, newOrder) {
+function switchOrder(arr, targetId, newOrder) { // hàm đổi vị trí phần tử trong mảng
   if (!Array.isArray(arr)) return [];
 
   const clone = [...arr];
-  const targetIndex = clone.findIndex(item => item.id === targetId);
+  const targetIndex = clone.findIndex(item => item.id === targetId); 
   if (targetIndex === -1) return arr;
 
   const [targetItem] = clone.splice(targetIndex, 1);

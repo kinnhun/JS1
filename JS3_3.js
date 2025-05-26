@@ -1,8 +1,8 @@
-function lengthOfLIS(arr) {
+function lengthOfLIS(arr) { // hàm tìm độ dài dãy con tăng dài nhất
   const n = arr.length;
   if (n === 0) return 0;
 
-  const dp = Array(n).fill(1);
+  const dp = Array(n).fill(1); // Khởi tạo mảng dp với tất cả giá trị là 1
 
   for (let i = 1; i < n; i++) {
     for (let j = 0; j < i; j++) {
@@ -12,7 +12,7 @@ function lengthOfLIS(arr) {
     }
   }
 
-  return Math.max(...dp);
+  return Math.max(...dp); // Trả về giá trị lớn nhất trong mảng dp
 }
 
 if (require.main === module) {

@@ -1,11 +1,11 @@
-function findLongestWord(words) {
+function findLongestWord(words) { // hàm tìm từ dài nhất
   if (!words.length) return null;
   return words.reduce((longest, word) =>
     word.length > longest.length ? word : longest
   );
 }
 
-if (require.main === module) {
+if (require.main === module) { 
   const readline = require('readline');
 
   const rl = readline.createInterface({

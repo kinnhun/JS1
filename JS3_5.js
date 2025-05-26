@@ -1,4 +1,4 @@
-function findSmallestUnrepresentable(nums) {
+function findSmallestUnrepresentable(nums) { // hàm tìm số nguyên dương nhỏ nhất không thể biểu diễn
   const sorted = nums.slice().sort((a, b) => a - b);
   let res = 1;
 

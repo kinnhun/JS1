@@ -17,7 +17,7 @@ if (require.main === module) {
       const num2 = parseFloat(input2);
 
       if (isNaN(num1) || isNaN(num2)) {
-        console.log("❌ Invalid input. Please enter valid numbers.");
+        console.log("Invalid input. Please enter valid numbers.");
       } else {
         console.log(`✅ The sum is: ${sum(num1, num2)}`);
       }

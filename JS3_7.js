@@ -1,4 +1,4 @@
-function longestPalindromeLength(str) {
+function longestPalindromeLength(str) { // hàm tìm độ dài chuỗi con đối xứng dài nhất
   const normalized = str.toLowerCase().replace(/[^a-z0-9]/g, '');
   const charCount = {};
 
@@ -26,7 +26,7 @@ if (require.main === module) {
 
   rl.question('Enter a string: ', (input) => {
     const result = longestPalindromeLength(input);
-    console.log(`✅ Longest palindrome length (by rearrangement): ${result}`);
+    console.log(`Longest palindrome length (by rearrangement): ${result}`);
     rl.close();
   });
 }

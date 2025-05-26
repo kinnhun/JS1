@@ -1,4 +1,4 @@
-function findSecondSmallest(numbers) {
+function findSecondSmallest(numbers) { // tìm số nhỏ thứ 2 trong mảng
   const unique = [...new Set(numbers)];
   if (unique.length < 2) return null;
 

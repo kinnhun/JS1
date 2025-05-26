@@ -17,7 +17,10 @@ if (require.main === module) {
       console.log('❌ Please enter at least one string.');
     } else {
       const sorted = sortStrings(strings);
+      // in ra mảng đã sắp xếp
       console.log(`✅ Sorted strings: ${sorted.join(' ')}`);
+      // in ra mảng ban đầu
+      console.log(`✅ Original strings: ${strings.join(' ')}`);
     }
 
     rl.close();

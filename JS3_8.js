@@ -1,4 +1,4 @@
-function countPairsWithSum(nums, target) {
+function countPairsWithSum(nums, target) { // hàm đếm số cặp có tổng bằng target
   const seen = new Set();
   const used = new Set();
   let count = 0;

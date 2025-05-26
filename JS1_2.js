@@ -7,8 +7,8 @@ function stringLength(str) {
 if (require.main === module) {
   const readline = require('readline');
   const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+    input: process.stdin, // đọc  dữ liệu nhập vào 
+    output: process.stdout // in ra console 
   });
 
   rl.question('Enter a string: ', (input) => {

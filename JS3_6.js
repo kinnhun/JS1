@@ -1,4 +1,4 @@
-function findMedianOfTwoArrays(arr1, arr2) {
+function findMedianOfTwoArrays(arr1, arr2) {// hàm tìm giá trị trung vị
   const merged = arr1.concat(arr2).filter(n => !isNaN(n));
   if (merged.length === 0) return null;
 
