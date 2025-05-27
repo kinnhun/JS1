@@ -1,27 +1,27 @@
-function reverses(arr) {
-  return arr.reduce((acc, item) => [item, ...acc], []);
+function reverses(arr) { // Sử dụng reduce để đảo ngược mảng
+return arr.reduce((acc, item) => [item, ...acc], []);
 }
 
 // Hoặc dùng forEach:
 // function reverses(arr) {
-//   const result = [];
-//   arr.forEach(item => result.unshift(item));
-//   return result;
+// const result = [];
+// arr.forEach(item => result.unshift(item));
+// return result;
 // }
 
 if (require.main === module) {
-  const readline = require('readline');
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+const readline = require('readline');
+const rl = readline.createInterface({
+input: process.stdin,
+output: process.stdout
+});
 
-  rl.question('Enter array elements (space-separated): ', (input) => {
-    const arr = input.trim().split(/\s+/);
-    const result = reverses(arr);
-    console.log(`✅ Reversed array: [${result.join(', ')}]`);
-    rl.close();
-  });
+rl.question('Enter array elements (space-separated): ', (input) => {
+const arr = input.trim().split(/\s+/);
+const result = reverses(arr);
+console.log(`Reversed array: [${result.join(', ')}]`);
+rl.close();
+});
 }
 
 module.exports = reverses;

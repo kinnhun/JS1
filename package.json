@@ -1,22 +1,22 @@
 {
-  "name": "js1",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --verbose"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kinnhun/JS1.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kinnhun/JS1/issues"
-  },
-  "homepage": "https://github.com/kinnhun/JS1#readme",
-  "description": "",
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+"name": "js1",
+"version": "1.0.0",
+"main": "index.js",
+"scripts": {
+"test": "jest --verbose"
+},
+"repository": {
+"type": "git",
+"url": "git+https://github.com/kinnhun/JS1.git"
+},
+"author": "",
+"license": "ISC",
+"bugs": {
+"url": "https://github.com/kinnhun/JS1/issues"
+},
+"homepage": "https://github.com/kinnhun/JS1#readme",
+"description": "",
+"devDependencies": {
+"jest": "^29.7.0"
+}
 }
